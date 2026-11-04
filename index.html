@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis 18 Años | Nicolás</title>
+  
+  <!-- Meta tags para vista previa al compartir en WhatsApp -->
+  <meta property="og:title" content="Mis 18 Años • Nicolás">
+  <meta property="og:description" content="Estás cordialmente invitado a celebrar mis 18 años el 28 de Noviembre. Código de vestimenta: TOTAL WHITE.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon clásico en tono borgoña -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><circle cx=%2250%22 cy=%2250%22 r=%2242%22 fill=%22%23871E22%22/><text x=%2250%22 y=%2266%22 font-size=%2250%22 font-family=%22serif%22 font-weight=%22bold%22 text-anchor=%22middle%22 fill=%22%23FFFFFF%22>N</text></svg>">
+  
+  <!-- Tipografías: Burgues Script (vía local/Corinthia 700 & Pinyon Script), Bodoni Moda, Cormorant Garamond, Cinzel Decorative -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,600;0,6..96,700;0,6..96,800;1,6..96,400&family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Corinthia:wght@400;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Pinyon+Script&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Leaflet CSS para el Mapa Interactivo -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Reproductor Flotante de Música Elegante & Juvenil -->
+  <div class="letter-music-seal" id="musicPill" title="Música de la invitación">
+    <div class="music-vinyl-disc" id="musicDisc">
+      <i class="fa-solid fa-record-vinyl"></i>
+    </div>
+    <div class="music-caption">
+      <span class="music-song">golden hour • JVKE</span>
+      <span class="music-hint" id="musicStatus">Toca para reproducir ♫</span>
+    </div>
+    <button class="music-play-btn" id="musicBtn" aria-label="Reproducir o pausar">
+      <i class="fa-solid fa-play" id="musicIcon"></i>
+    </button>
+  </div>
+
+  <!-- Audio de la invitación (Instrumental acústica para piano & cuerdas) -->
+  <audio id="invitationAudio" preload="auto" loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=piano-moment-9835.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- CONTENEDOR ENVOLVENTE EN BORGOÑA #871E22 -->
+  <div class="letter-page-canvas">
+
+    <!-- CARTA DE INVITACIÓN (ESTILO PAPELERÍA CLÁSICA CON BORDE DE ÉPOCA) -->
+    <main class="stationery-letter">
+
+      <!-- SELLO DE CERA EN DORADO VIEJO (ANTIQUE GOLD WAX SEAL) -->
+      <div class="wax-seal-antique" title="Sello de Cera Dorado Viejo">
+        <div class="wax-seal-rim">
+          <div class="wax-seal-core">
+            <span class="wax-seal-letter">18</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- SILUETAS FLORALES BOTÁNICAS EN LAS ESQUINAS (Inspiradas en Foto 2) -->
+      <div class="corner-botanical corner-top-left">
+        <svg viewBox="0 0 100 100" class="botanical-svg">
+          <path d="M5,95 Q15,40 50,25 Q35,15 25,5 M50,25 Q70,20 95,5 M30,45 Q15,55 5,50 M38,32 Q25,25 20,35 M55,25 Q65,40 60,50 M75,18 Q85,30 95,25" fill="none" stroke="#871E22" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M22,12 C18,8 10,12 14,20 C18,25 26,18 22,12 Z" fill="none" stroke="#871E22" stroke-width="0.9"/>
+          <path d="M85,12 C80,6 72,12 76,18 C80,24 90,18 85,12 Z" fill="none" stroke="#871E22" stroke-width="0.9"/>
+          <circle cx="28" cy="18" r="1.5" fill="#871E22"/>
+          <circle cx="78" cy="15" r="1.5" fill="#871E22"/>
+        </svg>
+      </div>
+
+      <div class="corner-botanical corner-top-right">
+        <svg viewBox="0 0 100 100" class="botanical-svg flip-h">
+          <path d="M5,95 Q15,40 50,25 Q35,15 25,5 M50,25 Q70,20 95,5 M30,45 Q15,55 5,50 M38,32 Q25,25 20,35 M55,25 Q65,40 60,50 M75,18 Q85,30 95,25" fill="none" stroke="#871E22" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M22,12 C18,8 10,12 14,20 C18,25 26,18 22,12 Z" fill="none" stroke="#871E22" stroke-width="0.9"/>
+          <path d="M85,12 C80,6 72,12 76,18 C80,24 90,18 85,12 Z" fill="none" stroke="#871E22" stroke-width="0.9"/>
+          <circle cx="28" cy="18" r="1.5" fill="#871E22"/>
+          <circle cx="78" cy="15" r="1.5" fill="#871E22"/>
+        </svg>
+      </div>
+
+      <!-- BORDE ORNAMENTAL INTERIOR TIPO CARTOUCHE (Inspirado en Foto 2) -->
+      <div class="cartouche-inner-border">
+
+        <!-- CABECERA DE LA CARTA -->
+        <header class="letter-header">
+          <p class="letter-intro-text">TIENES EL HONOR DE SER INVITADO A CELEBRAR</p>
+          
+          <h1 class="letter-salutation">MIS DIECIOCHO AÑOS</h1>
+          
+          <div class="celebrant-name-banner">
+            <span class="banner-flourish">~</span>
+            <h2 class="celebrant-name script-font">Nicolás</h2>
+            <span class="banner-flourish">~</span>
+          </div>
+        </header>
+
+        <!-- EL NÚMERO 18 GRANDE Y FORMAL (SOLEMNE, MONUMENTAL Y ELEGANTE) -->
+        <div class="formal-age-monument">
+          <div class="age-line-ornament left"></div>
+          <div class="age-display-center">
+            <span class="age-prefix">CELEBRANDO MIS</span>
+            <div class="giant-formal-number">18</div>
+            <span class="age-suffix">AÑOS DE VIDA</span>
+          </div>
+          <div class="age-line-ornament right"></div>
+        </div>
+
+        <!-- SILUETA DE ILUSTRACIÓN COMPUESTA (Inspirada en Fotos 1 y 3) -->
+        <!-- Incluye copas de cóctel/martini con aceituna, velas con lazos y pastel con guirnaldas -->
+        <div class="letter-illustration-scene">
+          <svg viewBox="0 0 340 110" class="vintage-sketches-svg">
+            <g stroke="#871E22" stroke-width="1.1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              
+              <!-- COPA MARTINI / CÓCTEL (FOTO 1) -->
+              <g transform="translate(25, 12)">
+                <path d="M 5,8 L 32,45 L 32,78 M 60,8 L 32,45" />
+                <ellipse cx="32.5" cy="8" rx="27" ry="5.5" />
+                <ellipse cx="32" cy="78" rx="16" ry="3" />
+                <!-- Palillo y aceitunas -->
+                <path d="M 45,0 L 25,36" stroke-width="1" />
+                <ellipse cx="32" cy="24" rx="5" ry="4" transform="rotate(-15 32 24)" />
+                <ellipse cx="37" cy="14" rx="4.5" ry="3.5" transform="rotate(-15 37 14)" />
+                <!-- Burbujas efervescentes -->
+                <circle cx="22" cy="28" r="1.2" />
+                <circle cx="28" cy="34" r="0.9" />
+                <circle cx="39" cy="30" r="1.1" />
+              </g>
+
+              <!-- PASTEL VINTAGE CON GUIRNALDAS Y LAZOS (FOTO 3) -->
+              <g transform="translate(115, 20)">
+                <!-- Base del plato del pastel -->
+                <ellipse cx="55" cy="75" rx="48" ry="8" />
+                <ellipse cx="55" cy="78" rx="35" ry="4" />
+                <!-- Cuerpo del pastel -->
+                <path d="M 18,52 C 18,65 92,65 92,52 L 92,34 C 92,20 18,20 18,34 Z" />
+                <ellipse cx="55" cy="34" rx="37" ry="12" />
+                <!-- Festones / Guirnaldas decorativas con lazos -->
+                <path d="M 22,42 Q 38,54 55,44 Q 72,54 88,42" />
+                <path d="M 25,50 Q 40,62 55,52 Q 70,62 85,50" />
+                <!-- Lazos en las uniones (bows) -->
+                <!-- Lazo central -->
+                <path d="M 55,44 C 50,40 46,47 55,45 C 64,47 60,40 55,44 Z" />
+                <path d="M 55,45 Q 52,55 50,58 M 55,45 Q 58,55 60,58" />
+                <!-- Lazo izquierdo -->
+                <path d="M 22,42 C 18,38 15,44 22,43 C 27,44 25,38 22,42 Z" />
+                <path d="M 22,43 Q 20,50 18,53" />
+                <!-- Lazo derecho -->
+                <path d="M 88,42 C 84,38 81,44 88,43 C 93,44 91,38 88,42 Z" />
+                <path d="M 88,43 Q 90,50 92,53" />
+              </g>
+
+              <!-- VELAS ALTAS CON LAZOS DE CINTA (FOTO 3) -->
+              <g transform="translate(245, 15)">
+                <!-- Vela 1 (alta) -->
+                <path d="M 22,12 L 22,70 M 25,12 L 25,70" />
+                <ellipse cx="23.5" cy="12" rx="1.5" ry="0.8" />
+                <!-- Llama -->
+                <path d="M 23.5,12 Q 21,5 23.5,0 Q 26,5 23.5,12 Z" />
+                <!-- Candelabro y base -->
+                <path d="M 18,70 L 29,70 L 27,76 L 10,80 L 37,80 L 20,76 Z" />
+                <!-- Lazo atado a la vela -->
+                <path d="M 23.5,45 C 15,40 12,50 23.5,46 C 35,50 32,40 23.5,45 Z" />
+                <path d="M 23.5,46 Q 16,60 14,66 M 23.5,46 Q 30,60 32,66" />
+                
+                <!-- Vela 2 (más pequeña) -->
+                <path d="M 52,28 L 52,72 M 54.5,28 L 54.5,72" />
+                <ellipse cx="53.2" cy="28" rx="1.3" ry="0.6" />
+                <path d="M 53.2,28 Q 51,21 53.2,17 Q 55.4,21 53.2,28 Z" />
+                <path d="M 45,72 L 61,72 L 42,78 L 64,78" />
+                <path d="M 53.2,50 C 47,46 45,54 53.2,51 C 61,54 59,46 53.2,50 Z" />
+                <path d="M 53.2,51 Q 48,62 46,67 M 53.2,51 Q 58,62 60,67" />
+              </g>
+
+            </g>
+          </svg>
+        </div>
+
+        <!-- CUERPO DE LA CARTA (FECHA & HORA) -->
+        <div class="letter-body-section">
+          <p class="letter-date-heading">SÁBADO, 28 DE NOVIEMBRE DE 2026</p>
+          <p class="letter-time-sub">A las ocho de la noche (8:00 PM)</p>
+        </div>
+
+        <!-- INTEGRACIÓN ELEGANTE: GOOGLE CALENDAR -->
+        <div class="stationery-action-block">
+          <div class="calendar-monogram-tag">
+            <span class="tag-month">NOV</span>
+            <span class="tag-day">28</span>
+          </div>
+          <div class="calendar-action-details">
+            <p class="calendar-inv-prompt">Añade este día a tu agenda para no olvidarlo:</p>
+            <div class="calendar-btn-group">
+              <a href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Mis+18+A%C3%B1os+%E2%80%A2+Nicol%C3%A1s&dates=20261128T200000/20261129T040000&details=%C2%A1Gran+Celebraci%C3%B3n+de+mis+18+A%C3%B1os!+C%C3%B3digo+de+vestimenta%3A+TOTAL+WHITE.&location=-10.8028620%2C+-77.7404854" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="stationery-btn btn-primary-stationery">
+                <i class="fa-brands fa-google"></i>
+                <span>Agendar en Google Calendar</span>
+              </a>
+              
+              <button type="button" class="stationery-btn btn-secondary-stationery" id="downloadIcsBtn">
+                <i class="fa-regular fa-calendar-check"></i>
+                <span>iCal / Apple Calendar</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- CÓDIGO DE VESTIMENTA: TOTAL WHITE (GRANDE Y EN ESPAÑOL ENTRE PARÉNTESIS) -->
+        <div class="stationery-dresscode-card">
+          <div class="dresscode-ribbon-tag">
+            <i class="fa-solid fa-ribbon wine-color"></i>
+            <span>CÓDIGO DE VESTIMENTA</span>
+            <i class="fa-solid fa-ribbon wine-color"></i>
+          </div>
+          
+          <!-- TOTAL WHITE GRANDE -->
+          <h3 class="total-white-monumental">TOTAL WHITE</h3>
+          
+          <!-- EN ESPAÑOL ENTRE PARÉNTESIS, PEQUEÑO PERO MUY LEGIBLE -->
+          <p class="total-white-parenthesis">(Vestimenta completamente blanca)</p>
+          
+          <!-- Muestras de color blanco puro visibles -->
+          <div class="white-palette-display">
+            <div class="white-chip">
+              <span class="chip-color chip-pure-white"></span>
+              <span class="chip-label">Blanco Puro</span>
+            </div>
+            <div class="white-chip">
+              <span class="chip-color chip-ivory-white"></span>
+              <span class="chip-label">White Linen</span>
+            </div>
+            <div class="white-chip">
+              <span class="chip-color chip-silk-white"></span>
+              <span class="chip-label">Seda / Off-White</span>
+            </div>
+          </div>
+
+          <p class="dresscode-invitation-message">
+            Será un honor contar con tu presencia vistiendo de riguroso blanco para iluminar juntos esta velada irrepetible.
+          </p>
+        </div>
+
+        <!-- SECCIÓN DE UBICACIÓN & MAPA INTERACTIVO -->
+        <section class="stationery-location-section">
+          
+          <div class="location-cartouche-head">
+            <!-- ICONO DEL MAPA DESTACADO PARA UBICACIÓN EXACTA -->
+            <div class="map-icon-insignia">
+              <i class="fa-solid fa-map-location-dot"></i>
+            </div>
+            <h4 class="location-calligraphy script-font">Ubicación del Evento</h4>
+            <p class="location-exact-legend">Haz clic o interactúa sobre el mapa para conocer el punto exacto</p>
+          </div>
+
+          <!-- MAPA INTERACTIVO (LEAFLET ENMARCADO TIPO PAPELERÍA) -->
+          <div class="stationery-map-frame">
+            <div id="interactiveMap" class="map-canvas-view"></div>
+            
+            <div class="map-interact-overlay" id="mapHelper">
+              <i class="fa-solid fa-hand-pointer"></i>
+              <span>Toca para interactuar y explorar la zona</span>
+            </div>
+          </div>
+
+          <!-- PLACA DE COORDENADAS EXACTAS -->
+          <div class="coordinates-seal-badge">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <span>Coordenadas exactas: <strong>-10.8028620, -77.7404854</strong></span>
+          </div>
+
+          <!-- BOTONES ELEGANTES DE NAVEGACIÓN (NO GENÉRICOS) -->
+          <div class="stationery-navigation-grid">
+            <a href="https://www.google.com/maps/search/?api=1&query=-10.8028620,-77.7404854" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="stationery-btn btn-bordeaux-engraved">
+              <i class="fa-solid fa-compass"></i>
+              <span>Abrir en Google Maps</span>
+            </a>
+
+            <a href="https://waze.com/ul?ll=-10.8028620,-77.7404854&navigate=yes" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="stationery-btn btn-outline-stationery">
+              <i class="fa-brands fa-waze"></i>
+              <span>Cómo Llegar con Waze</span>
+            </a>
+
+            <button type="button" class="stationery-btn btn-vellum-copy" id="copyCoordsBtn">
+              <i class="fa-regular fa-copy"></i>
+              <span id="copyCoordsText">Copiar Coordenadas</span>
+            </button>
+          </div>
+
+        </section>
+
+        <!-- LLUVIA DE SOBRES DISCRETA Y ELEGANTE -->
+        <div class="stationery-envelope-note">
+          <i class="fa-solid fa-envelope-open-text wine-color"></i>
+          <h5 class="note-heading">Lluvia de Sobres</h5>
+          <p class="note-body">Tu cariño y compañía son el regalo más valioso. Si deseas hacerme un presente, dispondremos de un baúl para sobres durante la recepción.</p>
+        </div>
+
+        <!-- CUENTA REGRESIVA FORMAL -->
+        <div class="formal-countdown-block">
+          <span class="countdown-caption">TIEMPO RESTANTE PARA LA CELEBRACIÓN</span>
+          <div class="countdown-strip" id="countdown">
+            <div class="strip-unit">
+              <span class="strip-number" id="days">00</span>
+              <span class="strip-text">DÍAS</span>
+            </div>
+            <span class="strip-sep">/</span>
+            <div class="strip-unit">
+              <span class="strip-number" id="hours">00</span>
+              <span class="strip-text">HORAS</span>
+            </div>
+            <span class="strip-sep">/</span>
+            <div class="strip-unit">
+              <span class="strip-number" id="minutes">00</span>
+              <span class="strip-text">MINUTOS</span>
+            </div>
+            <span class="strip-sep">/</span>
+            <div class="strip-unit">
+              <span class="strip-number" id="seconds">00</span>
+              <span class="strip-text">SEGUNDOS</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DESPEDIDA Y FIRMA DE LA CARTA -->
+        <footer class="letter-footer">
+          <p class="valediction-text">Con todo mi cariño,</p>
+          <p class="letter-signature-calligraphy script-font">Nicolás</p>
+          <div class="footer-wax-date">28 • NOVIEMBRE • 2026</div>
+        </footer>
+
+      </div> <!-- Fin cartouche-inner-border -->
+
+      <!-- ESQUINAS BOTÁNICAS INFERIORES -->
+      <div class="corner-botanical corner-bottom-left">
+        <svg viewBox="0 0 100 100" class="botanical-svg flip-v">
+          <path d="M5,95 Q15,40 50,25 Q35,15 25,5 M50,25 Q70,20 95,5 M30,45 Q15,55 5,50 M38,32 Q25,25 20,35 M55,25 Q65,40 60,50 M75,18 Q85,30 95,25" fill="none" stroke="#871E22" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M22,12 C18,8 10,12 14,20 C18,25 26,18 22,12 Z" fill="none" stroke="#871E22" stroke-width="0.9"/>
+          <path d="M85,12 C80,6 72,12 76,18 C80,24 90,18 85,12 Z" fill="none" stroke="#871E22" stroke-width="0.9"/>
+          <circle cx="28" cy="18" r="1.5" fill="#871E22"/>
+          <circle cx="78" cy="15" r="1.5" fill="#871E22"/>
+        </svg>
+      </div>
+
+      <div class="corner-botanical corner-bottom-right">
+        <svg viewBox="0 0 100 100" class="botanical-svg flip-vh">
+          <path d="M5,95 Q15,40 50,25 Q35,15 25,5 M50,25 Q70,20 95,5 M30,45 Q15,55 5,50 M38,32 Q25,25 20,35 M55,25 Q65,40 60,50 M75,18 Q85,30 95,25" fill="none" stroke="#871E22" stroke-width="1.1" stroke-linecap="round"/>
+          <path d="M22,12 C18,8 10,12 14,20 C18,25 26,18 22,12 Z" fill="none" stroke="#871E22" stroke-width="0.9"/>
+          <path d="M85,12 C80,6 72,12 76,18 C80,24 90,18 85,12 Z" fill="none" stroke="#871E22" stroke-width="0.9"/>
+          <circle cx="28" cy="18" r="1.5" fill="#871E22"/>
+          <circle cx="78" cy="15" r="1.5" fill="#871E22"/>
+        </svg>
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Toast de Notificaciones -->
+  <div class="stationery-toast" id="toastBox"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
